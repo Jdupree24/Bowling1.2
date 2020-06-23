@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>BowlingTest.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+BowlingTest.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">test</span><span class="s0">;</span>
+
+<span class="s0">import static </span><span class="s1">org.junit.Assert.assertEquals</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">org.junit.Test</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">main.*</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.awt.*</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">BowlingTest {</span>
+    <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">allOnes () {</span>
+        <span class="s0">int</span><span class="s1">[] rolls = </span><span class="s0">new int</span><span class="s1">[]{</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">0</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s1">game testGame = </span><span class="s0">new </span><span class="s1">game(rolls)</span><span class="s0">;</span>
+        <span class="s1">assertEquals(</span><span class="s2">20</span><span class="s0">, </span><span class="s1">testGame.scoreGame())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">mixedNumbersNoSpecials () {</span>
+        <span class="s0">int</span><span class="s1">[] rolls = </span><span class="s0">new int</span><span class="s1">[]{</span><span class="s2">1</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">0</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s1">game testGame = </span><span class="s0">new </span><span class="s1">game(rolls)</span><span class="s0">;</span>
+        <span class="s1">assertEquals(</span><span class="s2">66</span><span class="s0">, </span><span class="s1">testGame.scoreGame())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">spares () {</span>
+        <span class="s0">int</span><span class="s1">[] rolls = </span><span class="s0">new int</span><span class="s1">[]{</span><span class="s2">1</span><span class="s0">,</span><span class="s2">9</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">8</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">7</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">0</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s1">game testGame = </span><span class="s0">new </span><span class="s1">game(rolls)</span><span class="s0">;</span>
+        <span class="s1">assertEquals(</span><span class="s2">86</span><span class="s0">, </span><span class="s1">testGame.scoreGame())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">strikes () {</span>
+        <span class="s0">int</span><span class="s1">[] rolls = </span><span class="s0">new int</span><span class="s1">[]{</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">7</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">0</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s1">game testGame = </span><span class="s0">new </span><span class="s1">game(rolls)</span><span class="s0">;</span>
+        <span class="s1">assertEquals(</span><span class="s2">96</span><span class="s0">, </span><span class="s1">testGame.scoreGame())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">pickupSpare () {</span>
+        <span class="s0">int</span><span class="s1">[] rolls = </span><span class="s0">new int</span><span class="s1">[]{</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">7</span><span class="s0">,</span><span class="s2">2</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">4</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">5</span><span class="s0">,</span><span class="s2">3</span><span class="s0">,</span><span class="s2">0</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s1">game testGame = </span><span class="s0">new </span><span class="s1">game(rolls)</span><span class="s0">;</span>
+        <span class="s1">assertEquals(</span><span class="s2">94</span><span class="s0">, </span><span class="s1">testGame.scoreGame())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">bonusRoll () {</span>
+        <span class="s0">int</span><span class="s1">[] rolls = </span><span class="s0">new int</span><span class="s1">[]{</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">9</span><span class="s0">,</span><span class="s2">10</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s1">game testGame = </span><span class="s0">new </span><span class="s1">game(rolls)</span><span class="s0">;</span>
+        <span class="s1">assertEquals(</span><span class="s2">38</span><span class="s0">, </span><span class="s1">testGame.scoreGame())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">perfectGame () {</span>
+        <span class="s0">int</span><span class="s1">[] rolls = </span><span class="s0">new int</span><span class="s1">[]{</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">0</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">10</span><span class="s0">,</span><span class="s2">10</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s1">game testGame = </span><span class="s0">new </span><span class="s1">game(rolls)</span><span class="s0">;</span>
+        <span class="s1">assertEquals(</span><span class="s2">300</span><span class="s0">, </span><span class="s1">testGame.scoreGame())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">error () {</span>
+        <span class="s0">int</span><span class="s1">[] rolls = </span><span class="s0">new int</span><span class="s1">[]{</span><span class="s2">112</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">112</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">1</span><span class="s0">,</span><span class="s2">0</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s1">game testGame = </span><span class="s0">new </span><span class="s1">game(rolls)</span><span class="s0">;</span>
+        <span class="s1">assertEquals(</span><span class="s2">16</span><span class="s0">, </span><span class="s1">testGame.scoreGame())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
